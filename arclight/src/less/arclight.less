@@ -1,0 +1,753 @@
+/*! Project Arclight v1.1 | (c) 2015 University of Wisconsin |  MIT License | projectarclight.org */
+
+/*
+var colors_grey   = "#3e3f3a";
+var colors_brown  = "#c8bdab";
+var colors_red    = "#d1443b";
+var colors_orange = "#c58433";
+
+var colors_grey_light   = "#898B80";//"#4B4C46";
+var colors_brown_light  = "#D5C9B6";
+
+
+dark grey: #32332F
+
+*/
+
+@grey:  #3e3f3a;
+@brown: #c8bdab;
+@red:   #d1443b;
+
+#no_javascript_error
+{
+    width      : 100%;
+    text-align : center;
+    font-size  : 2em;
+    color      : white;
+    padding    : 1em;
+}
+
+body          
+{ 
+    /*background: #D5C9B6;*/
+    background: #3e3f3a;
+
+}
+
+.column_centered
+{
+    /*TODO: fallbacks for flex */
+    
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;    
+    
+}
+
+.row_left
+{
+    /*TODO: fallbacks for flex */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    /*flex-direction: left;
+    justify-content: top;   */
+}
+
+#right_column
+{
+    float:left;
+    width:100%;
+}
+
+
+
+form
+{
+    margin:auto;
+}
+
+#controls_box 
+{ 
+    background: #3e3f3a; 
+    /*width: 100%;*/ 
+    /*padding:10px;*/
+    margin: 0px; 
+
+    //width:100%;
+
+    float:left;
+}
+
+#search_box   
+{ 
+/*    float: left; 
+    margin-top: 15px; 
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+*/
+    margin-right: 10px;
+
+    min-width:10em;
+}
+
+#search_box textarea
+{
+    text-align: center;
+    /*vertical-align:middle;*/
+}
+
+/*
+#search_form input
+{
+    height: 2em;
+    padding-left:5px;
+    padding-right:5px;
+}
+*/
+
+@about_text_color: #606268;
+#about
+{
+    margin: 10px;
+    margin-right: 20px;
+    margin-top:20px;
+    text-align: justify;
+    font-size: 0.8em;
+//    font-style: small-caps;
+    line-height: 1.5em;
+}
+#about, #about a, #about a:visited
+{
+    color: @about_text_color;
+}
+#about a, #about a:visited
+{
+    color: @about_text_color;
+    text-decoration: none;
+    border-bottom: solid 1px darken( @about_text_color, 18% );
+}
+#about a:hover
+{
+    color: lighten( @about_text_color, 18% );
+    border-bottom: solid 1px lighten( @about_text_color, 18%);
+}
+
+
+
+#search_column   
+{ 
+    /*float: left; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    padding-left: 10px;
+    /*padding-right: 10px;*/
+   
+    /*margin-top: 15px; 
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;*/
+
+    //min-width:200px;
+    //max-width:200px;
+    width:300px;
+    //height:100%;
+
+    background: #1E1F1C;
+}
+
+#btn_search
+{    
+    background: #1E1F1C;
+}
+
+#btn_search:hover
+{
+    background: #d1443b;
+
+    -webkit-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+}
+
+.series
+{
+    min-width:10em;
+}
+
+/*
+#search_column div
+{
+    margin: 5px;
+}
+*/
+
+#chart_area    
+{   
+    /*float: left;  */
+
+    clear:both;
+
+    width:100%; 
+    min-height:400px;  
+    height:80%;   
+
+    /*margin: 5px;*/
+
+    /*padding-left:5px;    
+    padding-right:5px;*/
+}
+
+#controls_box .button
+{
+    float:left;
+}
+
+.button
+{
+
+    /*margin:  5px;*/
+    padding: 10px;
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.button img
+{
+    width:  3em;
+    height: 3em;
+    margin:auto;
+}
+
+.button.small 
+{
+    padding: 5px;
+}
+.button.small img
+{
+    width:  1em;
+    height: 1em;
+}
+
+.button:hover, .button.active:hover
+{
+    background: #d1443b;
+
+    -webkit-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+}
+
+.button.active
+{
+    background: #898B80;
+
+    -webkit-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 34px -10px rgba(0,0,0,0.75);
+}
+
+#export_area h2
+{
+    padding:20px;
+}
+
+.export_selection_area
+{
+    margin-top:     20px;
+    margin-bottom:  20px;
+    text-align:     center;
+}
+
+textarea
+{
+    padding-left: 4px;
+}
+
+
+.clear        
+{ 
+    clear: both; 
+}
+
+#logo_top
+{
+    float:right;
+    /*clear:both;*/
+    /*padding-top: 10px;*/
+}
+
+#loading_overlay
+{
+    position:absolute;
+
+    height:90%;
+    width:100%;
+
+    
+    background: #3e3f3a url(img/big_just_logo.png) center center no-repeat;
+    
+    z-index: 1000;
+}
+
+
+/* Chart options and friends */
+
+#year_selection_area
+{
+    display:none;
+    position:relative;
+    width:auto;
+
+    color: white;
+
+    z-index:100;
+}
+
+#year_selection_area .option
+{
+    float:left;
+    /*width:4em;*/
+    clear:both;
+    text-align: center;
+
+    margin:10px;
+}
+
+#year_selection_area .option input
+{
+    width:4em;
+    text-align: center;
+
+    color:#3e3f3a;
+}
+
+/*
+#year_selection_area input
+{
+    width:5em;
+    text-align: center;
+}
+*/
+
+
+#chart_area
+{
+    visibility:hidden;
+}
+
+
+
+/* search area tools */
+
+/*
+.series_underbar
+{
+    clear:both;
+
+    height:1px;
+
+    background-color:  #3e3f3a;
+    width:  100%;
+
+    margin-top:    10px;
+    margin-bottom: 10px;
+
+
+
+    -webkit-box-shadow: 0px 0px 24px -2px rgba(181,177,181,1);
+    -moz-box-shadow: 0px 0px 24px -2px rgba(181,177,181,1);
+    box-shadow: 0px 0px 24px -2px rgba(181,177,181,1);
+
+}
+*/
+
+.color_selection 
+{
+
+    width:  1.5em;
+    height: 1em;
+    margin: 0.25em;
+    background-color: #c58433;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#D5C9B6;
+
+    /*float:right;*/
+}
+.color_selection:hover 
+{
+    border-color: #3e3f3a;
+}
+
+#series_widgets
+{
+    padding-top: 10px;
+}
+
+.series_tools
+{
+    /*margin-top: 7px;*/
+    position:absolute;
+}
+
+/*.series_undertools, */
+.series_tools
+{
+    position:absolute;
+    /*float:left;*/
+    width:100%;
+    clear:both;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-justify-content: center;
+    justify-content: center; 
+
+    text-align:center;
+
+    background-color: ;
+
+    z-index: 100;
+}
+
+.series_tools .button
+{
+    background-color: #898B80;
+}
+.series_tools .button:hover
+{
+    background-color: #d1443b;
+}
+
+.series
+{
+    position: relative;
+
+    cursor: pointer; 
+    background-color: #D5C9B6;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    margin-bottom: 4px;
+    margin-left: 4px;
+
+    /*min-height: 1em;*/
+
+/*
+    display:           flex;
+    flex-direction:    column;
+    justify-content:   center;
+*/
+/*
+    display:           flex;
+    flex-direction:    row;
+
+    justify-content:   space-between;
+    justify-content:   flex-end;
+
+    flex-wrap:         wrap;  
+*/
+}
+
+@keyframes fade_throb {
+    0% {opacity: 0.01;}
+    100% {opacity: 1;}
+}
+
+
+.series .loading_indicator
+{
+    position:absolute;
+    display : none;
+    text-align:center;    
+}
+
+.series.loading .loading_indicator
+{    
+    width:100%;
+    height:100%;    
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    display: block;
+    background : #898B80;
+    color: white;
+    animation: fade_throb 1.25s alternate infinite;
+}
+
+.series.loading
+{
+    background-color: #7D8998;
+    color: #898B80;
+}
+
+.series.disabled
+{
+    background-color: #898B80;
+}
+
+/*
+.series_inner
+{
+    display:           flex;
+    flex-direction:    row;
+
+    justify-content:   space-between;
+    justify-content:   flex-end;
+
+    flex-wrap:         wrap;  
+}
+*/
+.series_inner
+{    
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-flex-direction: row;
+    flex-direction:    row;
+
+    -webkit-justify-content: space-between;
+    justify-content:   space-between;
+    -webkit-justify-content: flex-end; 
+    justify-content:   flex-end;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap:         wrap;  
+}
+
+.series .name
+{
+    color: #3e3f3a;
+    padding: 0.25em;
+    /*margin: 5px;*/
+    text-align: center;
+
+    min-height: 1em;
+
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/* modals */
+
+.modal-dialog
+{
+    /*background-color:   #3e3f3a;*/
+    background-color:   #c8bdab;
+    width: 80%;
+
+    /*padding:            15px;*/
+
+    /*border-radius:      20px;*/
+
+    color: ;
+
+-webkit-box-shadow: 0px 0px 24px -8px rgba(31,31,31,1);
+-moz-box-shadow: 0px 0px 24px -8px rgba(31,31,31,1);
+box-shadow: 0px 0px 24px -8px rgba(31,31,31,1);
+
+}
+
+.modal-dialog h2
+{
+    background-color: #3e3f3a;
+    color: white;
+
+    padding: 15px;
+    padding-bottom: 0px;
+    text-align: center;
+
+    font-size: 1.5em;
+    
+
+    margin:0px;
+}
+.modal-dialog .text_small
+{
+    background-color: #3e3f3a;
+    color: white;
+
+    padding: 10px;
+    text-align: center;
+
+    font-size: 0.8em;
+
+    margin:0px;
+}
+
+/* journal filter stuff*/
+
+#journal_filter_area #selected_journals
+{
+    text-align: center;
+
+
+}
+
+#journal_filter_area #journal_entry_box,
+#journal_filter_area #journals_search_results
+{
+    margin: 10px;
+}
+
+
+#journal_filter_area #journal_entry_box input
+{
+    padding:5px;
+}
+
+.found_journal
+{
+    background: white;
+    cursor: pointer; 
+
+    padding:5px;
+
+    height: 2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.found_journal:hover
+{
+    background: #3e3f3a;
+    color: white;
+}
+
+
+.filter_journal
+{
+    line-height: 1.5em;
+
+    background-color: #3e3f3a;
+    border-radius : 5px;
+    color: white;
+
+    margin:10px;
+
+    height: 2em;
+
+    text-align: left;
+
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.filter_journal .btn_remove
+{
+    float: left;
+    border-top-left-radius    : 5px;
+    border-bottom-left-radius : 5px;
+
+    padding:0.7em;
+    /*min-height:2em;*/
+
+}
+
+.filter_journal .title
+{
+    padding:0.25em;
+    margin-left:2.5em;
+    font-size: 1em;
+
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+@radius: 20px;
+.about_page div
+{
+    font-family: "AvenirLight", Arial, Helvetica;
+
+    max-width: 500px;
+    margin: auto;
+
+    font-size:      14pt;
+    line-height:    19pt;
+
+    text-align: justify;
+}
+
+.about_page h1
+{
+    border-radius: @radius;
+    padding: @radius;
+    background-color: @red;
+    color: #FFFFFF; //darken( @grey, 20% );
+
+    text-align:center;
+
+    font-family: "AvenirLight", Arial, Helvetica;
+    font-size:      14pt;
+    line-height:    19pt;
+}
+
+.about_page h2
+{    
+    border-radius: @radius;
+    padding: @radius;
+    background-color: darken( @grey, 10% );
+    color: #FFFFFF; //color: lighten( @grey, 20% );
+    
+    text-align:center;
+
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    margin-bottom:0px;
+
+    font-family: "AvenirLight", Arial, Helvetica;
+    font-size:      14pt;
+    line-height:    19pt;
+}
+
+.about_page p
+{
+    border-radius: @radius;
+    padding: @radius;
+    background-color: @brown;  
+
+    color:#555;  
+
+
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+
+    margin-top: 0px;
+
+    font-family: "AvenirLight", Arial, Helvetica;
+    font-size:      14pt;
+    line-height:    19pt;
+}

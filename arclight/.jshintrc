@@ -1,0 +1,15 @@
+{
+//  "bitwise": true,
+  "browser": true,
+//  "camelcase": true,
+  "curly": true,
+//  "eqeqeq": true,
+  "esnext": true,
+  "jquery": true,
+  "newcap": true,
+  "noarg": true,
+//  "quotmark": "single",
+//  "strict": true,
+  "undef": true,
+  "unused": true
+}
